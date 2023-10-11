@@ -1,31 +1,25 @@
 {
-  "name": "1Win Brasil",               // The name of your PWA
-  "short_name": "1Win Br",            // A shorter name for your PWA
-  "description": "!Win official app",  // A brief description
-  "start_url": "/index.html",         // The URL to load when the app is launched
-  "display": "fullscreen",            // Display mode ("standalone," "fullscreen," "minimal-ui," or "browser")
-  "background_color": "#0A2C5D",     // Background color of the splash screen
-  "theme_color": "#0077FF",          // Theme color for the app
-  "orientation": "portrait",              // Allowed orientation ("any," "natural," "landscape," "portrait," etc.)
-  "icons": [
+  "background_color": "#0a2c5d",
+  "description": "1Win Official Application",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "1Win Brazil",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "1Win BR",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "games"
+  ],
+  "screenshots": [],
+  "icons": [],
+  "shortcuts": [
     {
-      "src": "/images/1win-192.png",   // Icon for app (192x192 pixels)
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/1win-512.png",   // Icon for app (512x512 pixels)
-      "sizes": "512x512",
-      "type": "image/png"
+      "name": "logo",
+      "url": "https://res.cloudinary.com/strafe/image/upload/h_192/abios/competitors/team1WIN.png",
+      "description": ""
     }
   ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "permissions": [
-    "geolocation",
-    "notifications"
-  ],
-  "serviceworker": {
-    "src": "/service-worker.js"       // Path to your service worker script
-  }
+  "id": "1win"
 }
