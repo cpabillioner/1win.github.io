@@ -2,7 +2,7 @@
   "background_color": "#0a2c5d",
   "description": "1Win Official Application",
   "dir": "ltr",
-  "display": "fullscreen",
+  "display": "standalone",
   "name": "1Win Brazil",
   "orientation": "portrait",
   "scope": "/",
