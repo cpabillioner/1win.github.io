@@ -13,7 +13,13 @@
     "games"
   ],
   "screenshots": [],
-  "icons": [],
+  "icons": [
+    {
+      "src": "1w.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    }
+  ],
   "shortcuts": [
     {
       "name": "logo",
