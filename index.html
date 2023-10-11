@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json"> <!-- Add your manifest.json file -->
+    <title>Your PWA Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        #iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            filter: blur(3px); /* Adjust the blur amount as needed */
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Define a class for the round button */
+#round-button {
+    display: inline-block;
+    width: 170px; /* Adjust the button size as needed */
+    height: 170px; /* Adjust the button size as needed */
+    padding: 10px;
+    border: 4px solid rgba(0, 0, 0, 0.2); /* Add a blurred border */
+    border-radius: 50%;
+    background-color: #0A2C5D; /* Deep blue button color */
+    color: #FFF; /* White text color */
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold;
+    text-align: center;
+    
+    cursor: pointer;
+    text-transform: uppercase; /* Uppercase the text */
+    text-decoration: none; /* Remove underlines from links */
+}
+
+#round-button:hover {
+    background-color: #08214C; /* Darker blue on hover */
+    border: 4px solid rgba(0, 0, 0, 0.4); /* Darker border on hover */
+}
+
+/* Optional: Add a box-shadow for a 3D effect on hover */
+#round-button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 50%
+}
+
+    </style>
+</head>
+<body>
+    <div id="iframe-container">
+        <iframe src="https://trafficmillions.ink/4YM63x" frameborder="0"></iframe>
+    </div>
+    <div id="button-container">
+        <button id="round-button">Install <img class="logo" src="https://1wgswe.xyz/v3/landing-fortune-wheel/img/logotype.svg"> Android app</button>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js') // Add the path to your service worker file
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // Check if the page is not in standalone PWA mode
+        if (!window.matchMedia('(display-mode: standalone)').matches) {
+            // Show the button
+            document.getElementById('round-button').style.display = 'block';
+        }
+
+        document.getElementById('round-button').addEventListener('click', () => {
+            if ('beforeinstallprompt' in window) {
+                const installButton = document.getElementById('round-button');
+                const installPromptEvent = window.beforeinstallprompt;
+                
+                installButton.style.display = 'none';
+                installPromptEvent.prompt();
+
+                installPromptEvent.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('PWA installation accepted');
+                    } else {
+                        console.log('PWA installation dismissed');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
