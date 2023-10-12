@@ -17,6 +17,10 @@ body {
     filter: blur(3px); /* Adjust the blur amount as needed */
 }
 
+.transparent {
+    filter: none;
+}
+
 iframe {
     position: absolute;
     top: 0;
