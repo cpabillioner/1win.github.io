@@ -5,7 +5,7 @@ const loadingSpinner = document.getElementById('loading-spinner');
 // Hide the loading spinner when the iframe is fully loaded
 iframe.addEventListener('load', () => {
     loadingSpinner.classList.add('hidden');
-    if (!window.matchMedia('(display-mode: standalone)').matches) {
+    if (!window.matchMedia('(display-mode: fullscreen)').matches) {
         btnContainer.style.display = 'block';    
     }
 });
@@ -14,7 +14,7 @@ iframe.addEventListener('load', () => {
 loadingSpinner.classList.remove('hidden');
         
 // Check if the page is not in standalone PWA mode
-if (!window.matchMedia('(display-mode: standalone)').matches) {
+if (!window.matchMedia('(display-mode: fullscreen)').matches) {
     // Show the button
     document.getElementById('round-button').style.display = 'block';
 } else {
