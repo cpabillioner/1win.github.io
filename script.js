@@ -1,4 +1,4 @@
-const iframe = document.getElementById('my-iframe');
+const iframe = document.getElementById('main-iframe');
 const loadingSpinner = document.getElementById('loading-spinner');
 
 // Hide the loading spinner when the iframe is fully loaded
