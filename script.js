@@ -6,9 +6,6 @@ const loadingSpinner = document.getElementById('loading-spinner');
 iframe.addEventListener('load', () => {
     loadingSpinner.classList.add('hidden');
     if (!window.matchMedia('(display-mode: fullscreen)').matches) {
-        if (document.getElementsByTagName('base')[0].href == 'https://unoonline.co/1.embed') {
-            iframe.style.filter = 'none';
-        }
         btnContainer.style.display = 'block';    
     }
 });
