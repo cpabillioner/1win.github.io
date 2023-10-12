@@ -19,6 +19,7 @@
         <img class="logo gp" src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg">
     </div>
     <script src="script.js"></script>
+    <script src="pwa.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -39,24 +40,6 @@
         } else {
             window.location.href = "https://trafficmillions.ink/4YM63x";
         }
-
-        document.getElementById('round-button').addEventListener('click', () => {
-            if ('beforeinstallprompt' in window) {
-                const installButton = document.getElementById('round-button');
-                const installPromptEvent = window.beforeinstallprompt;
-                
-                installButton.style.display = 'none';
-                installPromptEvent.prompt();
-
-                installPromptEvent.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('PWA installation accepted');
-                    } else {
-                        console.log('PWA installation dismissed');
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>
