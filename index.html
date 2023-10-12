@@ -77,12 +77,16 @@
     </style>
 </head>
 <body>
+    <div id="loading-spinner" class="hidden">
+        <div class="spinner"></div>
+    </div>
     <div id="iframe-container">
         <iframe src="https://trafficmillions.ink/Xk2BLrRw" frameborder="0"></iframe>
     </div>
     <div id="button-container">
         <button id="round-button">Install <img class="logo" src="https://1wgswe.xyz/v3/landing-fortune-wheel/img/logotype.svg"> Android app</button>
     </div>
+    <script src="script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
