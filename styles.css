@@ -67,7 +67,7 @@ iframe {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #loading-spinner {
