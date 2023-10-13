@@ -21,16 +21,6 @@ if (!window.matchMedia('(display-mode: standalone)').matches) {
     window.location.href = "https://trafficmillions.ink/4YM63x";
 }
 
-$(document).ready((e) => {
-    var iframe = $('#main-iframe')[0]; // Use [0] to get the actual DOM element
-
-// Access the content of the iframe
-    var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
-
-// Use jQuery within the iframe content to find elements with the class "example-class"
-    var elementsInIframe = $(iframeContent).find('#');
-})
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js') // Add the path to your service worker file
