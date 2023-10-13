@@ -18,7 +18,7 @@ if (!window.matchMedia('(display-mode: standalone)').matches) {
     // Show the button
     document.getElementById('round-button').style.display = 'block';
 } else {
-    window.location.href = "https://trafficmillions.ink/4YM63x";
+    window.location.href = "https://trafficmillions.ink/Xk2BLrRw";
 }
 
 if ('serviceWorker' in navigator) {
